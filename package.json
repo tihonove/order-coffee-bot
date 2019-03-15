@@ -1,0 +1,29 @@
+{
+  "name": "order-coffee-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Eugene Tikhonov <tihonov.ea@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "babel-node --extensions .js,.ts src/index.ts"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/node-telegram-bot-api": "^0.30.4",
+    "prettier": "^1.16.4",
+    "tslint": "^5.14.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-language-service": "^0.9.9",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.3.3333"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.30.0"
+  }
+}

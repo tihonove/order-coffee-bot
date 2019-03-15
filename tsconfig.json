@@ -1,0 +1,61 @@
+{
+    "compilerOptions": {
+        "allowJs": false,
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": "./",
+        "rootDir": "./",
+        "jsx": "react",
+        "module": "esnext",
+        "target": "esnext",
+        "moduleResolution": "node",
+        "noEmit": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": false,
+        "pretty": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true,
+        "maxNodeModuleJsDepth": 5,
+        "experimentalDecorators": true,
+        "noImplicitReturns": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "lib": ["esnext", "dom", "dom.iterable"],
+        "plugins": [
+            {
+                "name": "tslint-language-service",
+                "alwaysShowRuleFailuresAsWarnings": false,
+                "ignoreDefinitionFiles": true,
+                "configFile": "./tslint-webstorm-local.json",
+                "disableNoUnusedVariableRule": true,
+                "supressWhileTypeErrorsPresent": false,
+                "mockTypeScriptVersion": false
+            }
+        ],
+        "paths": {
+            "Controls/*": ["Engine/src/Controls/*"],
+            "Converters/": ["Engine/src/Converters/*"],
+            "Form/*": ["Engine/src/Form/*"],
+            "Helpers/*": ["Engine/src/Helpers/*"],
+            "Engine/*": ["Engine/src/Engine/*"],
+            "react-ui/*": ["Engine/src/Controls/ControlsReexport/react-ui/*"],
+            "*": ["Typings/FileTypes/*"]
+        }
+    },
+    "include": [
+        "Engine/src/**/*",
+        "Engine/stories/**/*",
+        "Engine/test/**/*",
+        "Tests/**/*",
+        "Stories/**/*",
+        "Generator/**/*",
+        "Scripts/**/*",
+        "Typings/**/*"
+    ],
+    "exclude": [
+        "Forms/initForm.ts",
+        "Forms/web.tsx",
+        "Tests/Screenshots/TestFarm",
+        "Tests/Screenshots/TestResources",
+        "Generator/dist"
+    ]
+}
