@@ -110,7 +110,9 @@ export class OrderDraftTest {
         orderDraft.addOrder(person1, new OrderRequest(250, 300));
         orderDraft.addOrder(person2, new OrderRequest(250, 300));
         expect(orderDraft.createOrder().formatOrderInfo()).to.eql(
-            `@person1 - 250, 510 руб.\n` + `@person2 - 250, 510 руб.\n\n` + `Всего к оплате: 1020, доставка бесплатная`
+            `@person1 - 250 гр., 510 руб.\n` +
+                `@person2 - 250 гр., 510 руб.\n\n` +
+                `Всего к оплате: 1020, в том числе доставка (300 руб.)`
         );
     }
 

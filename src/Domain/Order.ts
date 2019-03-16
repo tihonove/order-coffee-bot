@@ -69,7 +69,7 @@ export class Order {
     public formatOrderInfo(): string {
         let result = "";
         for (const o of this.getOrderInfoWithCost()) {
-            result += `@${o.person.id} - ${o.amount}, ${o.cost} руб.\n`;
+            result += `@${o.person.id} - ${o.amount} гр., ${o.cost} руб.\n`;
         }
         result += `\nВсего к оплате: ${this.totalWithDelivery}`;
         if (this.deliveryCost === 0) {
