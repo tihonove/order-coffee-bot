@@ -11,37 +11,6 @@ export interface OrderLineWithCost extends OrderLine {
 }
 
 export class Order {
-    private readonly pricing: IPricing;
-    private readonly orderLines: OrderLine[] = [];
-
-    public constructor(pricing: IPricing) {
-        this.pricing = pricing;
-    }
-
-    public getOrderInfoWithCost(): OrderLineWithCost[] {
-        const totalAmount = this.orderLines.reduce((result, x) => result + x.amount, 0);
-        return this.orderLines.map(orderLine => ({
-            ...orderLine,
-            cost: (orderLine.amount / totalAmount) * this.totalWithDelivery,
-        }));
-    }
-
-    public lineAt(index: number): OrderLineWithCost {
-        const orderLine = this.orderLines[index];
-        const totalAmount = this.orderLines.reduce((result, x) => result + x.amount, 0);
-        return {
-            ...orderLine,
-            cost: (orderLine.amount / totalAmount) * this.totalWithDelivery,
-        };
-    }
-
-    public addOrderLine(person: Person, amount: number): void {
-        this.orderLines.push({
-            person: person,
-            amount: amount,
-        });
-    }
-
     public get total(): number {
         const totalAmount = this.orderLines.reduce((result, x) => result + x.amount, 0);
         return (totalAmount * this.pricing.pricePer100Gram) / 100;
@@ -56,6 +25,31 @@ export class Order {
 
     public get totalWithDelivery(): number {
         return this.total + this.deliveryCost;
+    }
+    private readonly pricing: IPricing;
+    private readonly orderLines: OrderLine[] = [];
+
+    public constructor(pricing: IPricing) {
+        this.pricing = pricing;
+    }
+
+    public getOrderInfoWithCost(): OrderLineWithCost[] {
+        const totalAmount = this.orderLines.reduce((result, x) => result + x.amount, 0);
+        return this.orderLines.map(orderLine =>
+            this.getOrderLineWithCost(orderLine, totalAmount, this.totalWithDelivery)
+        );
+    }
+
+    public lineAt(index: number): OrderLineWithCost {
+        const totalAmount = this.orderLines.reduce((result, x) => result + x.amount, 0);
+        return this.getOrderLineWithCost(this.orderLines[index], totalAmount, this.totalWithDelivery);
+    }
+
+    public addOrderLine(person: Person, amount: number): void {
+        this.orderLines.push({
+            person: person,
+            amount: amount,
+        });
     }
 
     public createOrderEmailMessage(): string {
@@ -78,5 +72,12 @@ export class Order {
             result += `, в том числе доставка (${this.deliveryCost} руб.)`;
         }
         return result;
+    }
+
+    private getOrderLineWithCost(orderLine: OrderLine, totalAmount: number, totalWithDelivery: number) {
+        return {
+            ...orderLine,
+            cost: (orderLine.amount / totalAmount) * totalWithDelivery,
+        };
     }
 }
