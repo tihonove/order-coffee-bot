@@ -1,29 +1,49 @@
 {
-  "name": "order-coffee-bot",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "Eugene Tikhonov <tihonov.ea@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "start": "babel-node --extensions .js,.ts src/index.ts"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.3.4",
-    "@babel/node": "^7.2.2",
-    "@babel/plugin-proposal-class-properties": "^7.3.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
-    "@babel/preset-typescript": "^7.3.3",
-    "@types/node-telegram-bot-api": "^0.30.4",
-    "prettier": "^1.16.4",
-    "tslint": "^5.14.0",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-language-service": "^0.9.9",
-    "tslint-plugin-prettier": "^2.0.1",
-    "typescript": "^3.3.3333"
-  },
-  "dependencies": {
-    "node-telegram-bot-api": "^0.30.0"
-  }
+    "name": "order-coffee-bot",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Eugene Tikhonov <tihonov.ea@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "start": "babel-node --extensions .js,.ts src/index.ts",
+        "test": "mocha test/**/*.ts",
+        "build": "webpack"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.2.3",
+        "@babel/core": "^7.3.4",
+        "@babel/node": "^7.2.2",
+        "@babel/plugin-proposal-class-properties": "^7.3.4",
+        "@babel/plugin-proposal-decorators": "^7.3.0",
+        "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
+        "@babel/preset-env": "^7.3.4",
+        "@babel/preset-typescript": "^7.3.3",
+        "@babel/register": "^7.0.0",
+        "@types/mocha": "^5.2.6",
+        "@types/node-telegram-bot-api": "^0.30.4",
+        "@types/nodemailer": "^4.6.6",
+        "babel-loader": "^8.0.5",
+        "chai": "^4.2.0",
+        "chai-shallow-deep-equal": "^1.4.6",
+        "copy-webpack-plugin": "^5.0.1",
+        "mocha": "^6.0.2",
+        "mocha-typescript": "^1.1.17",
+        "prettier": "^1.16.4",
+        "rollup": "^1.6.0",
+        "tslint": "^5.14.0",
+        "tslint-config-prettier": "^1.18.0",
+        "tslint-language-service": "^0.9.9",
+        "tslint-plugin-prettier": "^2.0.1",
+        "typescript": "^3.3.3333",
+        "webpack": "^4.29.6",
+        "webpack-cli": "^3.3.0"
+    },
+    "dependencies": {
+        "@types/chai": "^4.1.7",
+        "@types/fs-extra": "^5.0.5",
+        "fs-extra": "^7.0.1",
+        "node-telegram-bot-api": "^0.30.0",
+        "nodemailer": "^5.1.1",
+        "winston": "^3.2.1"
+    }
 }

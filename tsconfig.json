@@ -41,21 +41,5 @@
             "*": ["Typings/FileTypes/*"]
         }
     },
-    "include": [
-        "Engine/src/**/*",
-        "Engine/stories/**/*",
-        "Engine/test/**/*",
-        "Tests/**/*",
-        "Stories/**/*",
-        "Generator/**/*",
-        "Scripts/**/*",
-        "Typings/**/*"
-    ],
-    "exclude": [
-        "Forms/initForm.ts",
-        "Forms/web.tsx",
-        "Tests/Screenshots/TestFarm",
-        "Tests/Screenshots/TestResources",
-        "Generator/dist"
-    ]
+    "include": ["src/**/*", "test/**/*"]
 }

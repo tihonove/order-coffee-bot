@@ -1,0 +1,11 @@
+{
+    "smtp": {
+        "host": "smtp.yandex.ru",
+        "port": 465,
+        "auth": {
+            "user": "ea.tihonov@yandex.ru",
+            "pass": "************"
+        },
+        "sender": "ea.tihonov@yandex.ru"
+    }
+}
