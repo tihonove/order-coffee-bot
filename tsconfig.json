@@ -4,13 +4,12 @@
         "allowSyntheticDefaultImports": true,
         "baseUrl": "./",
         "rootDir": "./",
-        "jsx": "react",
         "module": "esnext",
         "target": "esnext",
         "moduleResolution": "node",
         "noEmit": true,
         "noUnusedLocals": true,
-        "noUnusedParameters": false,
+        "noUnusedParameters": true,
         "pretty": true,
         "skipLibCheck": true,
         "sourceMap": true,
@@ -19,7 +18,7 @@
         "experimentalDecorators": true,
         "noImplicitReturns": true,
         "suppressImplicitAnyIndexErrors": true,
-        "lib": ["esnext", "dom", "dom.iterable"],
+        "lib": ["esnext"],
         "plugins": [
             {
                 "name": "tslint-language-service",
@@ -30,16 +29,7 @@
                 "supressWhileTypeErrorsPresent": false,
                 "mockTypeScriptVersion": false
             }
-        ],
-        "paths": {
-            "Controls/*": ["Engine/src/Controls/*"],
-            "Converters/": ["Engine/src/Converters/*"],
-            "Form/*": ["Engine/src/Form/*"],
-            "Helpers/*": ["Engine/src/Helpers/*"],
-            "Engine/*": ["Engine/src/Engine/*"],
-            "react-ui/*": ["Engine/src/Controls/ControlsReexport/react-ui/*"],
-            "*": ["Typings/FileTypes/*"]
-        }
+        ]
     },
     "include": ["src/**/*", "test/**/*"]
 }

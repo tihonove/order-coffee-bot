@@ -7,7 +7,9 @@
     "scripts": {
         "start": "babel-node --extensions .js,.ts src/index.ts",
         "test": "mocha test/**/*.ts",
-        "build": "webpack"
+        "build": "webpack",
+        "lint": "tslint --project tsconfig.json",
+        "typecheck": "tsc"
     },
     "devDependencies": {
         "@babel/cli": "^7.2.3",

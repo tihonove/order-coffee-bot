@@ -74,7 +74,11 @@ export class Order {
         return result;
     }
 
-    private getOrderLineWithCost(orderLine: OrderLine, totalAmount: number, totalWithDelivery: number) {
+    private getOrderLineWithCost(
+        orderLine: OrderLine,
+        totalAmount: number,
+        totalWithDelivery: number
+    ): OrderLineWithCost {
         return {
             ...orderLine,
             cost: (orderLine.amount / totalAmount) * totalWithDelivery,
